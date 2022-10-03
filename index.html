@@ -13,26 +13,29 @@
   </style>
  </head>
  <body>
+  <!-- If you can see this, i must tell one thing to you: You are pretty smart of a 10 year-old -->
   <div id="main" style="font-family: Arial;">
    <p>Please wait while your Discord Nitro is generated...</p>
    <p id="st">Status: Generation started</p>
-   <!-- <img src="/loading-circle-loading.gif" id="img"></img> -->
    <div id="img" class="tenor-gif-embed" data-postid="15296651" data-share-method="host" data-aspect-ratio="1" data-width="10%"><a href="https://tenor.com/view/loading-circle-loading-waiting-circle-gif-15296651"><a href="https://tenor.com/search/loading+circle-gifs"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
    <p id="gener"></p>
    <script>
+    /* 
+        Fake generation state script + the one which will append the Fusion link to the website after a given timeout
+    */
    	function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
        async function upSt()
        {
-   	var image = document.getElementById("img");
-   	await sleep(1500);
-       document.getElementById("st").innerHTML = 
-        "Status: Generation underway";
-   	await sleep(5000);
-       document.getElementById("st").innerHTML = 
-        "Status: Done. <br> The following website might not look like a Nitro server, but in fact, it is";
-       image.parentNode.removeChild(image);
-       document.getElementById("gener").innerHTML =
-        "Here is the generated link: <a href="https://discord.com/invite/cRJJQhF2HK">Get Nitro Now!</a>";
+        var image = document.getElementById("img");
+        await sleep(1500);
+        document.getElementById("st").innerHTML = 
+            "Status: Generation underway";
+        await sleep(5000);
+        document.getElementById("st").innerHTML = 
+            "Status: Done. <br> The following website might not look like a Nitro server, but in fact, it is";
+        image.parentNode.removeChild(image);
+        document.getElementById("gener").innerHTML =
+            "Here is the generated link: <a href=\"https://discord.com/invite/cRJJQhF2HK\">Get Nitro Now!</a>";
        }
        upSt();
    </script>
